@@ -23,8 +23,28 @@
         
                 server 10.8.0.0 255.255.255.0 - in my case i left the default one 
         
-        - then edit push routes;
+        - next edit push routes;
                 
                 push "route 172.31.0.0 255.255.0.0"
         
-        - 
+        - then go again to cmd line and run;
+                
+                openvpn --genkey --secret ta.key - to genarate a ta.key file
+        
+        - after that just save file;
+                
+                
+- now restart openvpn.serice and enable server_ra.conf file;
+
+        systemctl disable openvpn.service 
+        systemctl stop openvpn.service 
+        
+        systemctl enable openvpn@server_ra
+        systemctl start openvpn@server_ra
+        
+        systemctl enable --now openvpn.service
+                
+                
+
+ 
+                
