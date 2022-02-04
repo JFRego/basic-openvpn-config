@@ -7,7 +7,7 @@
         
 - next open /etc/openvpn/server_ra.conf;
 
-        - change the names of de files;
+        - change the names of de .crt and .key files;
                 
                 # (see "pkcs12" directive in man page).
                 ca ca.crt
