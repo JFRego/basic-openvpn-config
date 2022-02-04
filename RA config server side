@@ -1,6 +1,10 @@
 #Remote Access Server side (Server_ra.conf)
 
 
+- install openvpn;
+        
+        apt install openvpn -y
+
 - place ca.crt, chained.crt & ivpn.key inside /etc/openvpn;
 
         chmod 600 ivpn.key
