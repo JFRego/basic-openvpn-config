@@ -1,0 +1,30 @@
+#Remote Access Server side (Server_ra.conf)
+
+
+- place ca.crt, chained.crt & ivpn.key inside /etc/openvpn;
+
+        chmod 600 ivpn.key
+        
+- next open /etc/openvpn/server_ra.conf;
+
+        - change the names of de files;
+                
+                # (see "pkcs12" directive in man page).
+                ca ca.crt
+                cert chained.crt
+                key ivpn.key  # This file should be kept secret
+
+
+        - press ctrl z and run;
+                
+                openssl dhparam -out dh2048.pem 2048
+                
+        - type fg to go back to your suspended file, then edit the subnet address to assign to clients;
+        
+                server 10.8.0.0 255.255.255.0 - in my case i left the default one 
+        
+        - then edit push routes;
+                
+                push "route 172.31.0.0 255.255.0.0"
+        
+        - 
